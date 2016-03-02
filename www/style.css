@@ -1,0 +1,26 @@
+@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+@import url(https://fonts.googleapis.com/css?family=Orbitron:500);
+
+h2 {
+  font-family: 'Lobster', cursive;
+  font-weight: 500;
+  line-height: 1.1;
+  color: #ad1d28;
+}
+
+body {
+  background-color: #fff;
+}
+
+.timer {
+  text-align: center; 
+  font-family: 'Orbitron', cursive;
+  background: #222;
+  color: #33ff00;
+  font-size: 50px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+    
+}

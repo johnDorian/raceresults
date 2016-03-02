@@ -1,28 +1,37 @@
-
-# This is the user-interface definition of a Shiny web application.
-# You can find out more about building applications with Shiny here:
-# 
-# http://www.rstudio.com/shiny/
-#
-
 library(shiny)
+library(readr)
+library(dplyr)
+# Load the ggplot2 package which provides
+# the 'mpg' dataset.
 
-shinyUI(pageWithSidebar(
+race_results <- read_csv("data/race_results.csv")
+genders <- (race_results %>% distinct(Gen)  %>% filter(!is.na(Gen)))$Gen
+# Define the overall UI
+shinyUI(
   
-  # Application title
-  headerPanel("Old Faithful Geyser Data"),
+  fluidPage(
+    tags$head(
+      tags$link(rel = "stylesheet", type = "text/css", href = "style.css")
+    ),
+    titlePanel("Simple race reults demo"),
+    
+    # Create a new Row in the UI for selectInputs
   
-  # Sidebar with a slider input for number of bins
-  sidebarPanel(
-    sliderInput("bins",
-                "Number of bins:",
-                min = 1,
-                max = 50,
-                value = 30)
-  ),
+    # Create a new row for the table.
+
+    fluidRow(
+      column(7,
+             htmlOutput("text")
+      )
+    ),
+    fluidRow(
+      column(7,plotOutput("plot"))
+      
+    )
   
-  # Show a plot of the generated distribution
-  mainPanel(
-    plotOutput("distPlot")
+    
+  
+    
+    
   )
-))
+)
