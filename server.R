@@ -1,13 +1,8 @@
-library(shiny)
-library(readr)
-library(ggplot2)
-library(lubridate)
-library(stringr)
-library(dplyr)
+
 # Load the ggplot2 package which provides
 # the 'mpg' dataset.
 #library(ggplot2)
-data <- read_csv("data/race_results.csv")
+#data <- read_csv("data/race_results.csv")
 # Define a server for the Shiny app
 shinyServer(function(input, output, session) {
  

@@ -1,11 +1,9 @@
-library(shiny)
-library(readr)
-library(dplyr)
+
 # Load the ggplot2 package which provides
 # the 'mpg' dataset.
 
-race_results <- read_csv("data/race_results.csv")
-genders <- (race_results %>% distinct(Gen)  %>% filter(!is.na(Gen)))$Gen
+#race_results <- read_csv("data/race_results.csv")
+#genders <- (race_results %>% distinct(Gen)  %>% filter(!is.na(Gen)))$Gen
 # Define the overall UI
 shinyUI(
   
